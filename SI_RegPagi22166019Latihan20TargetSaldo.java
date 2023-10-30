@@ -15,7 +15,6 @@ import java.text.DecimalFormat;
  * Deskripsi Program    : Cara mencari banyak bulan sampai mencapai target saldo.
  */
 public class SI_RegPagi22166019Latihan20TargetSaldo {
-
     public static void main(String[] args) {
         
         double saldoAwal = 3500000;
@@ -25,18 +24,17 @@ public class SI_RegPagi22166019Latihan20TargetSaldo {
         // Format saldo awal sebagai mata uang
         DecimalFormat df = new DecimalFormat("#,###,###");
         String saldoAwalFormatted = df.format(saldoAwal);
-
+        
+        // Menentukan banyak bulan sampai saldo yang ditentukan
         int bulan = 0;
         while (saldoAwal < saldoTarget) {
             double bunga = saldoAwal * (bungaPerBulan / 100);
             saldoAwal += bunga;
             bulan++;
 
-            // Format saldo per bulan sebagai mata uang
+            // Menampilkan bulan beserta saldo hingga mencapai target
             String saldoBulanFormatted = df.format(saldoAwal);
             System.out.println("Saldo di Bulan ke- " + bulan + ": Rp. " + saldoBulanFormatted);
         }
     }
 }
-    
-
